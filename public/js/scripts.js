@@ -98,7 +98,7 @@ $(function() {
  */
 function addMarker(place)
 {
-    // TODO
+    //loadinfowindows function is defined above 
     // store place's latitute and longitude in a variable
     var myLatlng = new google.maps.LatLng(parseFloat(place.latitude), parseFloat(place.longitude));
 
@@ -112,7 +112,7 @@ function addMarker(place)
         labelStyle: {opacity: 0.75}
     });
 
-    // load articles in info window upon label click
+    // load articles in info window upon label click (event listener)
     google.maps.event.addListener(marker, "click", function() { loadInfoWindow(place, marker) });
 
     // add marker to global markers array
