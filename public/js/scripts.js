@@ -207,7 +207,7 @@ function removeMarkers()
     var len_markers = markers.length;
     for (var i = 0; i < len_markers; i++)
     {
-        // remove marker from map
+        // remove marker from map (see googlemaps documentations)
         markers[i].setMap(null);
     }
 
