@@ -6,32 +6,33 @@
     // make sure there is an appropriate number of command-line arguments
     if ($argc != 2)
     {
-	print("Usage: ./import text");
-	exit(1);
+	    print("Usage: ./import text");
+	    exit(1);
     } 
     // check if file exists
     if (!file_exists($argv[1]))
     {
-	print("File does not exist.");
-	exit(1);
+	    print("File does not exist.!!!");
+	    exit(1);
     }
     // check if file is readable
     if (!is_readable($argv[1]))
     {
-	print("File is not readable.");
-	exit(1);
+	    print("File is not readable.!!!");
+	    exit(1);
     }
     // open file
     $file = fopen($argv[1], "r");
     // check if open was successful
     if ($file == false)
     {
-	print("Could not open file.");
-	exit(1);
+	    print("Could not open file.");
+	    exit(1);
     }
-    // get line and insert into database
+    // get line and insert into database {1000} could be the max length of line...
     while ($row = fgetcsv($file, 1000, "\t"))
     {
+        //delimiter is tab now instead of ","
 	      CS50::query("INSERT INTO places (country_code, postal_code, place_name,
 	      admin_name1, admin_code1, admin_name2, admin_code2, admin_name3,
 	      admin_code3, latitude, longitude, accuracy) VALUES(?, ?, ?, ?,
