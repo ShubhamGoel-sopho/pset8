@@ -1,5 +1,3 @@
-/* global google */
-/* global _ */
 /**
  * scripts.js
  *
